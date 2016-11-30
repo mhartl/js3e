@@ -7,8 +7,14 @@
 <script src="../_js/jquery.min.js"></script>
 <script>
 $(document).ready(function() {
+	var body_color = 'green';
 	$('html').dblclick(function() {
-		alert('ouch');
+		$('body').css('background-color', body_color);
+		if (body_color == 'green') {
+			body_color = 'white';
+		} else {
+			body_color = 'green';
+		};
 	}); // end doubleclick
 	$('a').mouseover(function() {
 		var message = "<p>You moused over a link</p>";
@@ -19,6 +25,9 @@ $(document).ready(function() {
 	}); // end click
 	$('#textfield').focus(function() {
 		$(this).css('background-color','red');
+	}); // end focus
+	$('#textfield').focusout(function() {
+		$(this).css('background-color','white');
 	}); // end focus
 }); // end ready
 </script>
